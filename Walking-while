@@ -1,0 +1,35 @@
+function walking(input){
+    let sumSteps= 0;
+
+    index = 0;
+    let command = input[index];
+    index++;
+
+    
+
+    while(command !=='Going home'){
+    let steps = Number(command);
+   
+    sumSteps+=steps;
+
+    if(sumSteps>=10000){
+        console.log("Goal reached! Good job!");
+        console.log(`${sumSteps-10000} steps over the goal!`);
+        return;
+    }
+
+    command = input[index];
+    index++;
+    }
+
+    let stepsHome= Number(input[index]);
+    sumSteps+=stepsHome;
+
+    if(sumSteps>=10000){
+        console.log('Goal reached! Good job!');
+        console.log(`${sumSteps-10000} steps over the goal!`);
+    }else{
+        console.log(`${10000 -sumSteps} more steps to reach goal.`);
+    }
+
+}
