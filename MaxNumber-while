@@ -1,0 +1,24 @@
+function maxNum(input){
+    let index = 0;
+    let maxNumber= Number.MIN_SAFE_INTEGER;
+    let comand = Number(input[index]);
+    index++;
+    
+    while(comand !=="Stop"){
+       let num = Number(comand);
+                
+        if( num>maxNumber){
+            maxNumber=num;
+                 
+        }
+        
+        comand = input[index];
+        index++;
+        
+
+    }
+
+
+console.log(maxNumber);
+
+}
