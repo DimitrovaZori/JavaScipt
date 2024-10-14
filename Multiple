@@ -1,0 +1,9 @@
+function multiple(n){
+    sum = 0;
+    for(let i =1; i<=10; i++){
+        sum = i*n;
+        console.log(i + ' * ' + n + " = " +sum );
+    }
+}
+multiple(5);
+// 1 * 5 = 5 ......
