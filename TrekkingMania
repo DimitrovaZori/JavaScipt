@@ -1,0 +1,43 @@
+function trekking(input){
+    let groups = input[0];
+    
+    let countMusala = 0;
+    let countMonblan = 0;
+    let countKuliman = 0;
+    let countK2 = 0;
+    let countEverest = 0;
+    let allPeople = 0;
+
+    for(let i = 1; i<input.length; i++){
+        let countPeople = Number(input[i]);
+        if(countPeople<=5){
+            countMusala+=countPeople;
+        }else if(countPeople<=12){
+            countMonblan+=countPeople;
+        }else if(countPeople<=25){
+            countKuliman+=countPeople;
+        }else if(countPeople<=40){
+            countK2+=countPeople;
+        }else{
+            countEverest+=countPeople;
+        }
+
+        allPeople+=countPeople;
+
+    }
+    console.log(`${(countMusala/allPeople*100).toFixed(2)}%`);
+    console.log(`${(countMonblan/allPeople*100).toFixed(2)}%`);
+    console.log(`${(countKuliman/allPeople*100).toFixed(2)}%`);
+    console.log(`${(countK2/allPeople*100).toFixed(2)}%`);
+    console.log(`${(countEverest/allPeople*100).toFixed(2)}%`);
+    
+}
+
+trekking(["5",
+"25",
+"41",
+"31",
+"250",
+"6"]);
+//answer 0.00% 1.70% 7.08% 8.78% 82.44%
+
