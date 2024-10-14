@@ -1,0 +1,41 @@
+function ranklist(input){
+    let tours = Number(input[0]);
+    let pointsStart = Number(input[1]);
+    let points =0;
+    let countW =0;
+
+    for(let i =2; i<input.length;i++){
+        let variant = String(input[i]);
+
+        switch(variant){
+            case "W":
+            points+=2000;
+            countW++;
+            break;
+            case "F":
+            points+=1200;
+            break;
+            case "SF":
+            points+=720;
+            break;
+            default:
+            break;
+        }
+    
+    }
+
+    console.log(`Final points: ${pointsStart+points}`);
+    console.log(`Average points: ${Math.trunc(points/tours)}`);
+    console.log(`${(countW/tours*100).toFixed(2)}%`);
+
+}
+
+ranklist(["5"
+"1400",
+"F",
+"SF",
+"W",
+"W",
+"SF"]);
+// answer Final points: 8040 Average points: 1328  40.00%
+
