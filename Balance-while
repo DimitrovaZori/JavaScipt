@@ -1,0 +1,26 @@
+function balance(input){
+    let index = 0;
+    let account = 0;
+    let comand = Number(input[index]);
+    index++;
+
+    while(comand !=="NoMoreMoney"){
+       let money = Number(comand);
+                
+        if( money<0){
+         console.log(`Invalid operation!`);
+         break;
+          
+        }
+        console.log(`Increase: ${money.toFixed(2)}`);
+        account+=money;
+        comand = input[index];
+        index++;
+        
+
+    }
+
+
+console.log(`Total: ${account.toFixed(2)}`);
+
+}
