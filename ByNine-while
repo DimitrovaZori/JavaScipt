@@ -1,0 +1,20 @@
+function divisibleByNine(n, m) {
+  let sum = 0;
+  let outputNumbers = '';
+  for (let i = n; i <=m; i++) {
+	if (i % 9 === 0) {
+	 sum+=i;
+	 outputNumbers[i];
+    }
+ 
+}
+
+console.log(`The sum: ${sum}` );
+
+for (let i = n; i <=m; i++) {
+	if (i % 9 === 0) {
+	console.log(i);
+    }
+ 
+}
+}
