@@ -1,0 +1,36 @@
+function oscarsRating(input){
+    let actor = input[0];
+    let pointsAcademy =Number(input[1]);
+    let countJudges = Number(input[2]);
+    let charNum= input.length;
+    
+    
+    for(let i = 3; i<input.length; i+=2){
+       let judge=input[i];
+       let pointsJudje=Number(input[i+1]);
+               let points =judge.length * pointsJudje/2;
+    pointsAcademy+=points;
+         
+          if(pointsAcademy>1250.50){
+           return console.log(`Congratulations, ${actor} got a nominee for leading role with ${pointsAcademy.toFixed(1)}!`);
+            
+          }    
+        
+    } 
+        let difference = Number(1250.50-pointsAcademy); 
+       console.log(`Sorry, ${actor} you need ${difference.toFixed(1)} more!`);
+ 
+   
+}
+oscarsRating(["Zahari Baharov",
+"205",
+4,
+"Johnny Depp",
+"45",
+"Will Smith",
+"29",
+"Jet Lee",
+"10",
+"Matthew Mcconaughey",
+"39"]);
+//answer Sorry, Zahari Baharov you need 247.5 more!
