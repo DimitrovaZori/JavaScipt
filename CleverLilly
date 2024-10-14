@@ -1,0 +1,25 @@
+function cleverLilly(n, priceWashmachine, pricePlay){
+
+    let money= 0;
+    let countPlay = 0;
+    let bonusMoney = 0;
+
+    for(let i=1; i<=n; i++){
+        if(i%2==1){
+            countPlay++;             
+        }else{
+          
+            bonusMoney+=10;
+        money+=bonusMoney;
+            money--;         }
+        }
+
+    let difference = priceWashmachine-(countPlay*pricePlay+money);
+
+        if(difference>0){
+        console.log(`No! ${difference.toFixed(2)}`);
+        }else{
+         console.log(`Yes! ${Math.abs(difference).toFixed(2)}`);
+           
+        }
+}
