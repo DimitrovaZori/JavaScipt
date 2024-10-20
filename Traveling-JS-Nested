@@ -1,0 +1,23 @@
+function traveling(input){
+ 
+    let destination = input[0];
+    let i = 1;
+    let neededMoney = Number(input[i]);
+    
+    let earnMoney = 0;
+
+    while (destination !== 'End'){
+    i++;
+    while(earnMoney<neededMoney){
+        let earn = Number(input[i]);
+        earnMoney+=earn;
+        i++;
+
+    }
+    console.log(`Going to ${destination}!`);
+    earnMoney =0;
+    destination = input[i++];
+    neededMoney = Number(input[i]);
+
+    }
+}
