@@ -1,0 +1,73 @@
+//Clock 
+
+function clock(){
+
+    for(let h = 0; h<=23; h++){
+        for(let m = 0; m<=59; m++){
+            console.log(`${h}:${m}`);
+           }
+    }
+}
+
+//Multiple
+function multiple(){
+
+    for(let a = 1; a<=10; a++){
+        for(let b = 1; b<=10; b++){
+            let c = a * b;
+            console.log(`${a} * ${b} = ${c}`);
+        }
+    }
+}
+
+//Combination
+function combination(n){
+
+    let validCombinationsCount = 0;
+    
+    for(let a = 0; a<=n; a++){
+        for(let b = 0; b<= n; b++){
+           for(let c = 0; c<= n; c++){
+            let d = a + b + c;
+            if(d ==n){
+                validCombinationsCount++;
+            }
+        }
+        
+      }
+    }
+    console.log(validCombinationsCount);
+}
+
+// MagicNumber
+function combination(input){
+
+    let start = Number(input[0]);
+    let end = Number (input[1]);
+    let magicNumber = Number(input[2]);
+    let isFound = false;
+    let counter = 0;
+
+
+    for(let x = start; x<=end; x++){
+       for(let y = start; y<=end; y++){
+        counter++;
+       let z = x+y;
+       if (z === magicNumber){
+        isFound = true;
+        console.log(`Combination N:${counter} (${x} + ${y} = ${magicNumber})`);
+        break;
+
+       }
+
+    }
+    if(isFound){
+        break;
+    }
+
+
+    }
+    if(!isFound){
+    console.log(`${counter} combinations - neither equals ${magicNumber}`);
+    }
+}
