@@ -1,0 +1,46 @@
+//Traveling
+
+function traveling(input){
+ 
+    let destination = input[0];
+    let i = 1;
+    let neededMoney = Number(input[i]);
+    
+    let earnMoney = 0;
+
+    while (destination !== 'End'){
+    i++;
+    while(earnMoney<neededMoney){
+        let earn = Number(input[i]);
+        earnMoney+=earn;
+        i++;
+
+    }
+    console.log(`Going to ${destination}!`);
+    earnMoney =0;
+    destination = input[i++];
+    neededMoney = Number(input[i]);
+
+    }
+}
+
+//Building
+function building(input){
+    let floors = Number(input[0]);
+    let rooms = Number(input[1]);
+
+    for(i=floors;i>0;i--){
+      let result = "";
+       for(y=0;y<rooms;y++){
+             
+           if(i===floors){
+                result += `L${i}${y} `;
+            }else if(i%2===0){
+            result += `O${i}${y} `;
+            }else{
+                result += `A${i}${y} `;
+            }           
+        }
+         console.log(result);
+    }
+    }
