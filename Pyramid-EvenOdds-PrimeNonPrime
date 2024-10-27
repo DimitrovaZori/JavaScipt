@@ -1,0 +1,93 @@
+//Pyramid
+function pyramid (n){
+
+    let current =1;
+    let isBigger=false;
+    let printCurrentLine = " ";
+
+    for(let rows =1; rows<=n; rows++){
+        for(let column=1; column<=rows; column++){
+            if(current>n){
+                isBigger=true;
+                break;
+            }
+           printCurrentLine+=current+" ";
+           current++; 
+        }
+
+       console.log(printCurrentLine);
+       printCurrentLine=" ";
+       if(isBigger) {
+        break;
+       }
+    }
+}
+
+//Equal Sums Even Odd Position
+
+function position(num1,num2){
+    let printLine = ' ';
+    for(let i =num1; i<=num2;i++){
+        let currentNum = ""+i;
+        let oddSum = 0;
+        let evenSum = 0;
+        for(let j = 0; j<=currentNum.length;j++){
+                let currentDigital = Number(currentNum.charAt(j));
+                if(j%2===0){
+                    evenSum+=currentDigital;
+                }else{
+                    oddSum+=currentDigital;
+                }
+        }
+
+        if (oddSum===evenSum){
+            printLine+=`${i} `
+        }
+
+    }
+
+    console.log(printLine);
+}
+
+//Sum Prime Non Prime
+
+function primeNonPrime(input){
+    let sumPrime =0;
+    let sumNonPrime=0;
+    let index = 0;
+    let command = input[index];
+    index++;
+
+    while(command !=='stop'){
+        let num =Number(command);
+
+        if(num<0){
+            console.log("Number is negative.");
+            command = input[index];
+            index++;
+            continue;
+        }
+        let isPrime = true;
+
+        for(let divisor=2; divisor<num;divisor++){
+            if(num%divisor===0){
+                isPrime = false;
+                break;
+            }
+        }
+
+        if(isPrime === true){
+            sumPrime+=num;
+
+        }else{
+            sumNonPrime+=num;
+        }
+        command = input[index];
+        index++;
+
+    }
+
+    console.log(`Sum of all prime numbers is: ${sumPrime}`);
+    console.log(`Sum of all non prime numbers is: ${sumNonPrime}`);
+
+}
