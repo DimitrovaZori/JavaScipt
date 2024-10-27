@@ -1,0 +1,58 @@
+//04. Train The Trainers
+
+function trainers(input){
+    let countJudgers= Number(input[0]);
+    let index=1;
+    let totalGrades = 0;
+    let totalPresantation= 0;
+    let command = input[index];
+    index++;
+
+    while(command!=='Finish'){
+        let gradeSum=0;
+        for(let currentJudge = 1; currentJudge<=countJudgers;currentJudge++){
+            let grade = Number(input[index]);
+            index++;
+            gradeSum+=grade;
+            
+        }
+        let avarage = gradeSum/countJudgers;
+        console.log(`${command} - ${avarage.toFixed(2)}.`);
+        totalGrades+=avarage;
+        totalPresantation++;
+
+    command = input[index];
+    index++;
+
+    }
+
+    console.log(`Student's final assessment is ${(totalGrades/totalPresantation).toFixed(2)}.`);
+}
+
+//05. Special Numbers
+
+function specialNum(n){
+    let result= '';
+
+    for(let currentNum =1111; currentNum<=9999; currentNum++){
+        let isSpecialNum= true;
+
+        let currentNumAsString= currentNum + '';
+
+        for(let index =0;index<currentNumAsString.length;index++){
+            let digit = Number(currentNumAsString[index]);
+
+            if(n% digit!==0){
+                isSpecialNum=false;
+                break;
+            }
+
+        }
+
+        if(isSpecialNum){
+            result+=currentNum+' ';
+        }
+
+    }
+    console.log(result);
+}
