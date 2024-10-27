@@ -1,0 +1,48 @@
+function cinemaTickets(input){
+    let countStudent = 0;
+    let countKids=0;
+    let countStandard=0;    
+
+    let index =0;
+    let command = input[index];
+    index++;
+
+    while(command !=='Finish'&& index<=input.length){
+        let movie = command;
+        let availablePlaces= Number(input[index]);
+        index++;
+        
+        let takenPlaces = 0;
+        let typeTicket = input[index];
+        index++;
+
+        while(typeTicket !=='End'){
+            if(typeTicket ==='standard'){
+                countStandard++;
+            }else if(typeTicket==='student'){
+                countStudent++;
+            }else if(typeTicket==='kid') {
+                countKids++;
+            }
+            takenPlaces++;
+            if(availablePlaces===takenPlaces){
+                break;
+            }
+            typeTicket = input[index];
+            index++;
+        }
+    
+            console.log(`${movie} - ${((takenPlaces/availablePlaces)*100).toFixed(2)}% full.`);
+
+            command = input[index];
+            index++;
+    
+    }
+    let totalCountTickets= countKids+countStandard+countStudent;
+    console.log(`Total tickets: ${totalCountTickets}`);
+     console.log(`${((countStudent/totalCountTickets)*100).toFixed(2)}% student tickets.`);
+     console.log(`${((countStandard/totalCountTickets)*100).toFixed(2)}% standard tickets.`);
+     console.log(`${((countKids/totalCountTickets)*100).toFixed(2)}% kids tickets.`);
+
+    
+}
